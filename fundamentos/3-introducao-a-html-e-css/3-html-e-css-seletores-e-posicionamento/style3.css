@@ -1,0 +1,5 @@
+h1, p {text-align: center; }
+li:hover {background-color: darkgreen;}
+li:active {font-family: fantasy;}
+
+li {list-style:decimal}
