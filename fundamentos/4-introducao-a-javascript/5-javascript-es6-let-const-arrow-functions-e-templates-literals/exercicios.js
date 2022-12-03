@@ -67,6 +67,25 @@
 
 // --------------------------------------------------------
 
-let speed = 190;
-const speedCar = (speed) => (speed >= 120)? `Você ultrapassou o limite de velocidade` : `Você está na velocidade permitida`;
-console.log(speedCar(speed));
+// let speed = 190;
+// const speedCar = (speed) => (speed >= 120)? `Você ultrapassou o limite de velocidade` : `Você está na velocidade permitida`;
+// console.log(speedCar(speed));
+
+//-------------------------------------------------------------
+
+
+// --------------------------PARTE II--------------------------
+
+
+
+let status = 'desligado';
+
+const OnOff = () =>
+
+
+
+
+
+
+
+
