@@ -12,7 +12,7 @@
 // 2 REQUISITO-------------------------------------------------
 
 // const splitSentence = (name) => name.split(' ');
-    
+
 // console.log(splitSentence(''));
 
 // 3 REQUISITO--------------------------------------------------
@@ -80,7 +80,7 @@
 // const catAndMouse = (mouse, cat1, cat2) => {
 //     const gato1 = Math.abs(cat1 - mouse);
 //     const gato2 = Math.abs(cat2 - mouse);
-    
+
 //     if(gato1 < gato2) {
 //         return 'cat1';
 //     }
@@ -94,7 +94,6 @@
 // console.log(catAndMouse(5, 7, 8));
 
 // 8 REQUISITO---------------------------------------------------
-
 
 // const fizzBuzz = (array) => {
 //     let arrayString = [];
@@ -118,3 +117,76 @@
 
 // 9 REQUISITO---------------------------------------------------
 
+// const encode = (param) => {
+//   const arraySplit = param.split("");
+//   let arrayCod = "";
+//   for (let index = 0; index < arraySplit.length; index += 1) {
+//     if (arraySplit[index] === "a") {
+//       arrayCod += "1";
+//     } else if (arraySplit[index] === "e") {
+//       arrayCod += "2";
+//     } else if (arraySplit[index] === "i") {
+//       arrayCod += "3";
+//     } else if (arraySplit[index] === "o") {
+//       arrayCod += "4";
+//     } else if (arraySplit[index] === "u") {
+//       arrayCod += "5";
+//     } else {
+//       arrayCod += arraySplit[index];
+//     }
+//   }
+//   return arrayCod;
+// };
+// console.log(encode("how are you today?"));
+
+// ------------------------BUG-----------------------------------
+// Segunda parte do requisito:
+
+// const decode = (param) => {
+//     return param.replaceAll('1', 'a').replaceAll('2', 'e').replaceAll('3', 'i').replaceAll('4', 'o').replaceAll('5', 'u');
+// }
+// console.log(decode('h4w 1r2 y45 t4d1y?'));
+
+// 10 REQUISITO--------------------------------------------------
+
+// const techList = (tech, personName) => {
+//     const techSort = tech.sort();
+//     const techObj = [];
+//     if(tech.length === 0) {
+//         return [];
+//     }
+//     for(let index = 0; index < tech.length; index += 1) {
+//         techObj.push({tech: techSort[index], name: personName})
+
+//     }
+//     // return techObj || []; -----> substitui o if.
+//     return techObj;
+// }
+// console.log(techList(['React', 'Jest', 'HTML', 'CSS', 'JavaScript'], 'Lucas'));
+
+// 11 REQUISITO-BONUS---------------------------------------------
+
+// const generatePhoneNumber = (param) => {
+//   if (param.length !== 11) {
+//     return "Array com tamanho incorreto";
+//   }
+
+//   for (let index = 0; index < param.length; index += 1) {
+//     if (param[index] < 0 || param[index] > 9) {
+//       return "não é possível gerar um número de telefone com esses valores";
+//     }
+//   }
+//   let counter = 0;
+//   for (let index = 0; index < param.length; index += 1) {
+//     for (let index2 = index + 1; index2 < param.length; index2 += 1) {
+//       if (param[index] === param[index2]) {
+//         counter += 1;
+//       }
+//     }
+//     if (counter >= 3) {
+//       return "não é possível gerar um número de telefone com esses valores";
+//     }
+//   }
+//   return `(${param[0]}${param[1]}) ${param[2]}${param[3]}${param[4]}${param[5]}${param[6]}-${param[7]}${param[8]}${param[9]}${param[10]}.`;
+// };
+// console.log(generatePhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1]));
