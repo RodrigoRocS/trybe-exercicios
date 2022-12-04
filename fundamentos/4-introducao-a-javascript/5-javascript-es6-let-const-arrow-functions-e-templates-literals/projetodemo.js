@@ -91,7 +91,13 @@
 //         return 'cat2';
 //     }
 // }
-// console.log(catAndMouse(5, 7, 8));
+// console.log(catAndMouse(0, -3, 2)); // cat2
+// console.log(catAndMouse(8, 6, -12)); // cat1
+// console.log(catAndMouse(-10, 2, 5)); // cat1
+// console.log(catAndMouse(-10, 10, 11)); // cat1
+// console.log(catAndMouse(10, -2, 5)); // cat2
+// console.log(catAndMouse(0, -2, -5)); // cat1
+// console.log(catAndMouse(0, 12, -15)); // cat1
 
 // 8 REQUISITO---------------------------------------------------
 
@@ -167,26 +173,55 @@
 // 11 REQUISITO-BONUS---------------------------------------------
 
 // const generatePhoneNumber = (param) => {
+//   let counter = 1;
 //   if (param.length !== 11) {
 //     return "Array com tamanho incorreto";
 //   }
 
 //   for (let index = 0; index < param.length; index += 1) {
-//     if (param[index] < 0 || param[index] > 9) {
-//       return "não é possível gerar um número de telefone com esses valores";
+//     if (param[index] === param[index + 1]) {
+//       counter += 1;
 //     }
 //   }
-//   let counter = 0;
+
 //   for (let index = 0; index < param.length; index += 1) {
-//     for (let index2 = index + 1; index2 < param.length; index2 += 1) {
-//       if (param[index] === param[index2]) {
-//         counter += 1;
-//       }
-//     }
-//     if (counter >= 3) {
+//     if (param[index] < 0 || param[index] > 9 || counter >= 3) {
 //       return "não é possível gerar um número de telefone com esses valores";
 //     }
 //   }
 //   return `(${param[0]}${param[1]}) ${param[2]}${param[3]}${param[4]}${param[5]}${param[6]}-${param[7]}${param[8]}${param[9]}${param[10]}.`;
 // };
 // console.log(generatePhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1]));
+
+// ----------------------BUG-------------------------------------
+
+// const generatePhoneNumber = (param) => {
+//     const a = Math.max(...param);
+//     const b = Math.min(...param);
+//     if(a > 9 || b < 0){
+//         return "não é possível gerar um número de telefone com esses valores";
+// 12 REQUISITO---------------------------------------------------
+
+// const triangleCheck = (lineA, lineB, lineC) => {
+//     if(lineA < (lineB + lineC) && lineA > Math.abs(lineB - lineC) || lineB < (lineA + lineC) && lineB > Math.abs(lineA - lineC) || lineC < (lineB + lineA) && lineC > Math.abs(lineB - lineA)) {
+//         return true;
+//     }
+//     else {
+//         return false;
+//     }
+// }
+// console.log(triangleCheck(50, 10, 10));
+
+// ---------------------------------------------------------------
+
+// const hydrate = (param) => {
+
+// }
+
+function justNumbers(text) {
+    var numbers = text.replace(/[^0-9]/g,'');
+    return parseInt(numbers);
+}
+console.log(justNumbers("Ol4 Mund0")); // 40
+console.log(justNumbers("3294943ASdasdasdasd23424")); // 329494323424
+console.log(justNumbers("Esta Str1ng tem alguns 3483284 números")); // 13483284
