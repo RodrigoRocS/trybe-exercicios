@@ -214,14 +214,14 @@
 
 // ---------------------------------------------------------------
 
-// const hydrate = (param) => {
+const hydrate = (param) => {
+    let numbers = param.replace(/[^0-9]/g,'');
+    const arraynum = numbers.split('');
+    let waterglass = 0;
 
-// }
-
-function justNumbers(text) {
-    var numbers = text.replace(/[^0-9]/g,'');
-    return parseInt(numbers);
-}
-console.log(justNumbers("Ol4 Mund0")); // 40
-console.log(justNumbers("3294943ASdasdasdasd23424")); // 329494323424
-console.log(justNumbers("Esta Str1ng tem alguns 3483284 números")); // 13483284
+    for(let index = 0; index < arraynum.length; index += 1){
+        waterglass += parseInt(arraynum[index]);
+    }
+    return `${waterglass} copos de água`;
+} 
+console.log(hydrate("1 cachaça, 5 cervejas e 1 copo de vinho"));
