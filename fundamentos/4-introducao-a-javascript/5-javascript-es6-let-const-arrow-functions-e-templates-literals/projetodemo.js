@@ -215,12 +215,11 @@
 // ---------------------------------------------------------------
 
 const hydrate = (param) => {
-    let numbers = param.replace(/[^0-9]/g,'');
-    const arraynum = numbers.split('');
+    let numbers = param.match(/\d+/g);
     let waterglass = 0;
 
-    for(let index = 0; index < arraynum.length; index += 1){
-        waterglass += parseInt(arraynum[index]);
+    for(let index = 0; index < numbers.length; index += 1){
+        waterglass += parseInt(numbers[index]);
     }
     return `${waterglass} copos de água`;
 } 
