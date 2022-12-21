@@ -87,10 +87,53 @@ const mudarArraySext = (param) => {
 }
 const sextas = ["4", "11", "18", "25"];
 
+const zoomDias = () => {
+  const todesDias = document.getElementsByClassName('day');
+  for (let index = 0; index < todesDias.length; index += 1) {
+    todesDias[index].addEventListener('mouseover', () => {
+      todesDias[index].style.fontSize = '30px';
+    })
+    todesDias[index].addEventListener('mouseout', () => {
+      todesDias[index].style.fontSize = '20px'
+    })
+  }
+}
+
+const tarefaPerson = (tarefa) => {
+  const paiTasks = document.querySelector('.my-tasks')
+  const criaSpanTarefa = document.createElement('span');
+  criaSpanTarefa.innerText = tarefa;
+  paiTasks.appendChild(criaSpanTarefa);
+}
+
+const colorLegend = (cor) => {
+  const paiTasks = document.querySelector('.my-tasks')
+  const criaDiv = document.createElement('div');
+  criaDiv.className = 'task';
+  criaDiv.style.backgroundColor = cor;
+  paiTasks.appendChild(criaDiv);
+}
+
+const selectTask = () => {
+  const taskSelec = document.getElementsByClassName('task selected');
+  const pegaDiv = document.querySelector('.task');
+  pegaDiv.addEventListener('click', (event) => {
+    if (taskSelec.length === 0) {
+      event.target.className = 'task selected';
+    } else {
+      event.target.className = 'task';
+    }
+  })
+}
+
 window.onload = () => {
   createDaysOfTheWeek();
   createDays();
   holiBtn("Feriados in my mind", 'btn-holiday', changeColorHoli);
   holiBtn('Sexta-feira', 'btn-friday');
-  mudarArraySext(sextas)
+  mudarArraySext(sextas);
+  zoomDias();
+  tarefaPerson('Cozinhar');
+  colorLegend('rgb(210, 29, 134)');
+  selectTask();
 };
