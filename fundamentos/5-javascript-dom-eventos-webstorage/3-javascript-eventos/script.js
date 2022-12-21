@@ -3,6 +3,7 @@ const decemberDaysList = [
   21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31,
 ];
 
+
 const createDaysOfTheWeek = () => {
   const weekDays = [
     "Domingo",
@@ -51,13 +52,13 @@ const sextaCheira = () => {
   }
 };
 
-const holiBtn = (Feriados) => {
+const holiBtn = (Feriados, id, funcao) => {
   const paiBotao = document.querySelector(".buttons-container");
   const botao = document.createElement("button");
-  botao.id = "btn-holiday";
+  botao.id = id;
   botao.innerText = Feriados;
   paiBotao.appendChild(botao);
-  botao.addEventListener("click", changeColorHoli);
+  botao.addEventListener("click", funcao);
 };
 
 const changeColorHoli = () => {
@@ -71,8 +72,25 @@ const changeColorHoli = () => {
   }
 };
 
+const mudarArraySext = (param) => {
+  const pegaClassSext = document.getElementsByClassName('friday')
+  const pegaSextaBtn = document.getElementById('btn-friday');
+  pegaSextaBtn.addEventListener('click', () => {
+    for (let index = 0; index < pegaClassSext.length; index += 1) {
+      if (pegaClassSext[index].innerText === 'Sexta-Cheira!') {
+        pegaClassSext[index].innerText = param[index];
+      } else {
+        pegaClassSext[index].innerText = 'Sexta-Cheira!';
+      }
+    }
+  })
+}
+const sextas = ["4", "11", "18", "25"];
+
 window.onload = () => {
   createDaysOfTheWeek();
   createDays();
-  holiBtn("Feriados in my mind");
+  holiBtn("Feriados in my mind", 'btn-holiday', changeColorHoli);
+  holiBtn('Sexta-feira', 'btn-friday');
+  mudarArraySext(sextas)
 };
