@@ -1,0 +1,14 @@
+#navbar {
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+    border: 1px solid black;
+}
+#backcolor {
+    display:flex ;
+    flex-direction: column;
+}
+#fontcolor {
+    display:flex ;
+    flex-direction: column;
+}
