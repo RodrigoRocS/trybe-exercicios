@@ -1,18 +1,25 @@
-// SELETORES
-const INPUT_TEXT = document.querySelector("#input-text");
-const INPUT_CHECKBOX = document.querySelector("#input-checkbox");
-const HREF_LINK = document.querySelector("#href");
+const BtnSub = document.getElementById("butaozinsub");
 
-HREF_LINK.addEventListener("click", (event) => {
-  event.preventDefault();
-});
 
-INPUT_CHECKBOX.addEventListener("click", (event) => {
-  event.preventDefault();
-});
 
-INPUT_TEXT.addEventListener("keypress", (event) => {
-  if (event.key !== "a") {
-    event.preventDefault();
+const alertaDaGalera = () => {
+  const cxtxt = document.getElementsByClassName("cmptxt");
+  const inputvalue = cxtxt[index].value.length;
+  for (let index = 0; index < cxtxt.length; index += 1) {
+    if (
+      inputvalue > cxtxt[index].style.maxLength &&
+      inputvalue < cxtxt[index].style.minLength
+    ) {
+      window.alert("Dados inválidos");
+    } else {
+      window.alert(
+        "Dados enviados com sucesso! Obrigado por participar do concurso TrybeTrip."
+      );
+    }
   }
-});
+};
+
+BtnSub.addEventListener("click", (event) => {
+    // event.preventDefault();
+    alertaDaGalera();
+  });

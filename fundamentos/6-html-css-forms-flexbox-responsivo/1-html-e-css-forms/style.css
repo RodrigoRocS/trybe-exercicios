@@ -1,0 +1,33 @@
+body {
+    border: 1px solid black;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+}
+
+.nomemail {
+    display: flex;
+    flex-direction: column;
+}
+
+.options {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.caixaresposta {
+    display: flex;
+    flex-direction: column;
+}
+
+#caixadetexto {
+    resize: none;
+}
+
+.checkbox {
+    display: flex;
+    flex-direction: column;
+}
